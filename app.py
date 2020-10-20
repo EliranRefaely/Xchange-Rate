@@ -10,7 +10,7 @@ today = str(datetime.now().date())
 @app.route("/", methods=["POST", "GET"])
 def home():
     
-    currencies_api = requests.get(f'https://free.currconv.com/api/v7/currencies?apiKey={keys}').json()["results"].values()
+    currencies_api = requests.get(f'https://free.currconv.com/api/v7/currencies?apiKey=0f02bb8d59f9a5795cf5').json()['results'].values()
     curreny_lis = []
     for i in currencies_api:
         curreny_lis += [i['id']]
