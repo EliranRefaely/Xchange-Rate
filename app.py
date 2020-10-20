@@ -1,6 +1,7 @@
 from datetime import datetime
 from flask import Flask, render_template, request
 import requests
+import time
 
 app = Flask(__name__)
 
@@ -11,6 +12,7 @@ today = str(datetime.now().date())
 def home():
     
     currencies_api = requests.get(f'https://free.currconv.com/api/v7/currencies?apiKey=0f02bb8d59f9a5795cf5').json()
+    time.sleep(1)
     currencies_api = currencies_api['results']
     currencies_api = currencies_api.values()
     curreny_lis = []
